@@ -7,6 +7,7 @@ import insertionSort from './SortingAlgorithms/InsertionSort';
 import mergeSort from './SortingAlgorithms/MergeSort';
 import quickSort from './SortingAlgorithms/QuickSort';
 import heapSort from './SortingAlgorithms/HeapSort';
+import selectionSort from './SortingAlgorithms/SelectionSort';
 import shellSort from './SortingAlgorithms/ShellSort';
 import generateNewArray from './utils/generateNewArray';
 import isSorted from './utils/isSorted';
