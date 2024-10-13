@@ -26,7 +26,14 @@ const heapSort = async (array, speed, setArray, setSortedIndices, setTransitionI
     };
 
     for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
-        await heapify(arr, n, i);
+        useEffect(() => {
+    const timeoutId = setTimeout(() => {
+        heapify(arr, n, i);
+    }, 200 - speed * 2);
+    return () => {
+        clearTimeout(timeoutId);
+    };
+}, [speed]);
     }
 
     for (let i = n - 1; i > 0; i--) {
