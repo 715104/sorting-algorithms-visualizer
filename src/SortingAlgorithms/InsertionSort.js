@@ -3,8 +3,9 @@ const insertionSort = (array, speed, setArray, setSortedIndices, setTransitionIn
     let n = arr.length;
     let i = 1;
     let j = 0;
+    let intervalRef = null;
 
-    intervalRef.current = setInterval(() => {
+    intervalRef = setInterval(() => {
         if (i < n) {
             let key = arr[i];
             j = i - 1;
@@ -19,7 +20,7 @@ const insertionSort = (array, speed, setArray, setSortedIndices, setTransitionIn
             i++;
         } else {
             setSortedIndices((prev) => [...prev, 0]);
-            clearInterval(intervalRef.current);
+            clearInterval(intervalRef);
         }
     }, 200 - speed * 2);
 };
