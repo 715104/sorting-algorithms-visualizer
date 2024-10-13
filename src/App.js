@@ -33,14 +33,14 @@ const App = () => {
     
 
     useEffect(() => {
-    if (isSorting && !isPaused) {
-        clearInterval(intervalRef.current);
-        startSorting();
-    }
-    return () => {
-        clearInterval(intervalRef.current);
-    };
-}, []);
+  if (isSorting && !isPaused) {
+    clearInterval(intervalRef.current);
+    startSorting();
+  }
+  return () => {
+    clearInterval(intervalRef.current);
+  };
+}, [isSorting, isPaused]);
 
     const startSorting = () => {
         if (isSorted(array)) {
