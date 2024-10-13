@@ -82,6 +82,12 @@ const App = () => {
         generateNewArray(size).then((newArray) => setArray(newArray));
     };
 
+    const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    };
+
+    const [isDarkMode, setIsDarkMode] = useState(false);
+    
     return (
         <div className={`${isDarkMode ? 'dark-mode' : 'light-mode'} flex flex-col items-center min-h-screen`}>
             <Header />
