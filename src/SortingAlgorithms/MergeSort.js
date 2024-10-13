@@ -5,7 +5,6 @@ const mergeSort = (array, speed, setArray, setSortedIndices, setTransitionIndice
     let left = 0;
     let right = 0;
     let end = 0;
-    let intervalRef = null;
 
     const merge = (start, mid, end) => {
         let left = arr.slice(start, mid);
