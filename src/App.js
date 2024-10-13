@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import ArrayVisualizer from './ArrayVisualizer';
 import bubbleSort from './SortingAlgorithms/BubbleSort';
 import insertionSort from './SortingAlgorithms/InsertionSort';
