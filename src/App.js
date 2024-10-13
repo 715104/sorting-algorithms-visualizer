@@ -12,6 +12,7 @@ import shellSort from './SortingAlgorithms/ShellSort';
 import selectionSort from './SortingAlgorithms/SelectionSort';
 import generateNewArray from './utils/generateNewArray';
 import isSorted from './utils/isSorted';
+import toggleDarkMode from './utils/toggleDarkMode';
 
 const App = () => {
   const [array, setArray] = useState([]);
@@ -22,6 +23,7 @@ const App = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [sortedIndices, setSortedIndices] = useState([]);
   const [transitionIndices, setTransitionIndices] = useState([]);
+  const [isDarkMode, setIsDarkMode] = useState(false); // Add this line
   const intervalRef = useRef(null);
 
   useEffect(() => {
@@ -53,7 +55,7 @@ const App = () => {
         insertionSort(array, speed, setArray, setSortedIndices, setTransitionIndices);
         break;
       case 'Merge Sort':
-        mergeSort(array, speed, setArray, setSortedIndices, setTransition Indices);
+        mergeSort(array, speed, setArray, setSortedIndices, setTransitionIndices);
         break;
       case 'Quick Sort':
         quickSort(array, speed, setArray, setSortedIndices, setTransitionIndices);
@@ -89,6 +91,11 @@ const App = () => {
     generateNewArray(size).then((newArray) => setArray(newArray));
   };
 
+  const handleToggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    toggleDarkMode(isDarkMode); // Call the toggleDarkMode function
+  };
+
   return (
     <div className={`${isDarkMode ? 'dark-mode' : 'light-mode'} flex flex-col items-center min-h-screen`}>
       <Header />
@@ -106,8 +113,9 @@ const App = () => {
         handleSizeChange={(e) => setSize(e.target.value)}
         handleSpeedChange={(e) => setSpeed(e.target.value)}
         handleAlgorithmChange={(e) => setAlgorithm(e.target.value)}
+        handleToggleDarkMode={handleToggleDarkMode} // Add this prop
       />
-    </div>
+ </div>
   );
 };
 
