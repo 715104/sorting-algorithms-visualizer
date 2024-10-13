@@ -23,6 +23,7 @@ const App = () => {
     const [transitionIndices, setTransitionIndices] = useState([]);
     const intervalRef = useRef(null);
     const [isDarkMode, setIsDarkMode] = useState(false);
+    const toggleDarkMode = () => {setIsDarkMode(!isDarkMode);
 
 
     useEffect(() => {
@@ -89,9 +90,6 @@ const App = () => {
         generateNewArray(size).then((newArray) => setArray(newArray));
     };
 
-    const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    };
     
   return (
     <div className={`${isDarkMode ? 'dark-mode' : 'light-mode'} flex flex-col items-center min-h-screen`}>
