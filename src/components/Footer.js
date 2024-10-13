@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Footer = ({ isSorting, isPaused, generateNewArray, startSorting, pauseSorting, resumeSorting, resetSorting }) => {
+const Footer = ({ isSorting, isPaused, generate NewArray, startSorting, pauseSorting, resumeSorting, resetSorting }) => {
+    const [size, setSize] = useState(30);
+    const [speed, setSpeed] = useState(50);
+    const [algorithm, setAlgorithm] = useState('Bubble Sort');
+
+    const handleSizeChange = (e) => {
+        setSize(e.target.value);
+    };
+
+    const handleSpeedChange = (e) => {
+        setSpeed(e.target.value);
+    };
+
+    const handleAlgorithmChange = (e) => {
+        setAlgorithm(e.target.value);
+    };
+
     return (
         <footer className="w-full p-4 flex items-center justify-center shadow-lg">
             <div className="flex items-center space-x-4">
