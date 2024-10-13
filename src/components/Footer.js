@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Footer = ({ isSorting, isPaused, generate NewArray, startSorting, pauseSorting, resumeSorting, resetSorting }) => {
+const Footer = ({ isSorting, isPaused, generateNewArray, startSorting, pauseSorting, resumeSorting, resetSorting }) => {
     const [size, setSize] = useState(30);
     const [speed, setSpeed] = useState(50);
     const [algorithm, setAlgorithm] = useState('Bubble Sort');
