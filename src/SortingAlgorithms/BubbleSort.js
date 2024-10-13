@@ -3,8 +3,9 @@ const bubbleSort = (array, speed, setArray, setSortedIndices, setTransitionIndic
     let n = arr.length;
     let i = 0;
     let j = 0;
+    let intervalRef = null;
 
-    intervalRef.current = setInterval(() => {
+    intervalRef = setInterval(() => {
         if (i < n) {
             if (j < n - i - 1) {
                 setTransitionIndices([j, j + 1]);
@@ -22,7 +23,7 @@ const bubbleSort = (array, speed, setArray, setSortedIndices, setTransitionIndic
             }
         } else {
             setSortedIndices((prev) => [...prev, 0]);
-            clearInterval(intervalRef.current);
+            clearInterval(intervalRef);
         }
     }, 200 - speed * 2);
 };
