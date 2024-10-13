@@ -22,10 +22,14 @@ const App = () => {
     const [sortedIndices, setSortedIndices] = useState([]);
     const [transitionIndices, setTransitionIndices] = useState([]);
     const intervalRef = useRef(null);
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
 
     useEffect(() => {
         generateNewArray(size).then((newArray) => setArray(newArray));
     }, [size]);
+
+    
 
     useEffect(() => {
     if (isSorting && !isPaused) {
@@ -88,8 +92,6 @@ const App = () => {
     const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
     };
-
-    const [isDarkMode, setIsDarkMode] = useState(false);
     
   return (
     <div className={`${isDarkMode ? 'dark-mode' : 'light-mode'} flex flex-col items-center min-h-screen`}>
