@@ -7,7 +7,6 @@ import insertionSort from './SortingAlgorithms/InsertionSort';
 import mergeSort from './SortingAlgorithms/MergeSort';
 import quickSort from './SortingAlgorithms/QuickSort';
 import heapSort from './SortingAlgorithms/HeapSort';
-import selectionSort from './SortingAlgorithms/SelectionSort';
 import shellSort from './SortingAlgorithms/ShellSort';
 import generateNewArray from './utils/generateNewArray';
 import isSorted from './utils/isSorted';
@@ -17,16 +16,15 @@ const App = () => {
     const [array, setArray] = useState([]);
     const [size, setSize] = useState(30);
     const [speed, setSpeed] = useState(50);
+    const [algorithm, setAlgorithm] = useState('Bubble Sort');
     const [isSorting, setIsSorting] = useState(false);
     const [isPaused, setIsPaused] = useState(false);
-    const [algorithm, setAlgorithm] = useState('Bubble Sort');
     const [sortedIndices, setSortedIndices] = useState([]);
     const [transitionIndices, setTransitionIndices] = useState([]);
-    const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('darkMode') === 'true');
     const intervalRef = useRef(null);
 
     useEffect(() => {
-        generateNewArray(size);
+        generateNewArray(size).then((newArray) => setArray(newArray));
     }, [size]);
 
     useEffect(() => {
@@ -35,10 +33,6 @@ const App = () => {
             startSorting();
         }
     }, [speed]);
-
-    useEffect(() => {
-        localStorage.setItem('darkMode', isDarkMode);
-    }, [isDarkMode]);
 
     const startSorting = () => {
         if (isSorted(array)) {
@@ -63,9 +57,6 @@ const App = () => {
             case 'Heap Sort':
                 heapSort(array, speed, setArray, setSortedIndices, setTransitionIndices);
                 break;
-            case 'Selection Sort':
-                selectionSort(array, speed, setArray, setSortedIndices, setTransitionIndices);
-                break;
             case 'Shell Sort':
                 shellSort(array, speed, setArray, setSortedIndices, setTransitionIndices);
                 break;
@@ -88,19 +79,7 @@ const App = () => {
         setIsSorting(false);
         setIsPaused(false);
         clearInterval(intervalRef.current);
-        generateNewArray(size);
-    };
-
-    const handleSizeChange = (e) => {
-        setSize(e.target.value);
-    };
-
-    const handleSpeedChange = (e) => {
-        setSpeed(e.target.value);
-    };
-
-    const handleAlgorithmChange = (e) => {
-        setAlgorithm(e.target.value);
+        generateNewArray(size).then((newArray) => setArray(newArray));
     };
 
     return (
@@ -112,14 +91,14 @@ const App = () => {
             <Footer
                 isSorting={isSorting}
                 isPaused={isPaused}
-                generateNewArray={generateNewArray}
+                generateNewArray={() => generateNewArray(size).then((newArray) => setArray(newArray))}
                 startSorting={startSorting}
                 pauseSorting={pauseSorting}
                 resumeSorting={resumeSorting}
                 resetSorting={resetSorting}
-                handleSizeChange={handleSizeChange}
-                handleSpeedChange={handleSpeedChange}
-                handleAlgorithmChange={handleAlgorithmChange}
+                handleSizeChange={(e) => setSize(e.target.value)}
+                handleSpeedChange={(e) => setSpeed(e.target.value)}
+                handleAlgorithmChange={(e) => setAlgorithm(e.target.value)}
             />
         </div>
     );
