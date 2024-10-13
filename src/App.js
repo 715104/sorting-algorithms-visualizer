@@ -91,11 +91,11 @@ const App = () => {
 
     const [isDarkMode, setIsDarkMode] = useState(false);
     
-    return (
-        <div className={`${isDarkMode ? 'dark-mode' : 'light-mode'} flex flex-col items-center min-h-screen`}>
-            <Header />
-            <main className="flex-grow flex items-center justify-center p-4">
-                <ArrayVisualizer array={array} sortedIndices={sortedIndices} transitionIndices={transitionIndices} />
+  return (
+    <div className={`${isDarkMode ? 'dark-mode' : 'light-mode'} flex flex-col items-center min-h-screen`}>
+      <Header />
+      <main className="flex-grow flex items-center justify-center p-4">
+        <ArrayVisualizer array={array} sortedIndices={sortedIndices} transitionIndices={transitionIndices} size={size} />
             </main>
             <Footer
                 isSorting={isSorting}
