@@ -40,14 +40,14 @@ const Footer = ({ isSorting, isPaused, generateNewArray, startSorting, pauseSort
                 <div className="flex items-center space-x-2">
                     <span>Algorithm:</span>
                     <select key="algorithm" value={algorithm} onChange={handleAlgorithmChange} className="bg-white rounded px-2 py-1" disabled={isSorting}>
-                        <option>Bubble Sort</option>
-                        <option>Selection Sort</option>
-                        <option>Insertion Sort</option>
-                        <option>Merge Sort</option>
-                        <option>Quick Sort</option>
-                        <option>Heap Sort</option>
-                        <option>Shell Sort</option>
-                    </select>
+  <option>Bubble Sort</option>
+  <option>Selection Sort</option>
+  <option>Insertion Sort</option>
+  <option>Merge Sort</option>
+  <option>Quick Sort</option>
+  <option>Heap Sort</option>
+  <option>Shell Sort</option>
+</select>
                 </div>
                 <button onClick={startSorting} className={`bg-blue-600 text-white px-4 py-2 rounded ${isSorting ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isSorting}>
                     <i className="fas fa-play mr-2"></i>
