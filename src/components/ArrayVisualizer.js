@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ArrayVisualizer = ({ array, sortedIndices, transitionIndices }) => {
+const ArrayVisualizer = ({ array, sortedIndices, transitionIndices, size }) => {
     return (
         <div className="flex items-end space-x-1 max-w-full overflow-x-auto">
             {array.map((value, index) => (
