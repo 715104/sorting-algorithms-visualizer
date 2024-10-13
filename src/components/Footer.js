@@ -5,16 +5,20 @@ const Footer = ({ isSorting, isPaused, generateNewArray, startSorting, pauseSort
     const [speed, setSpeed] = useState(50);
     const [algorithm, setAlgorithm] = useState('Bubble Sort');
 
+    const [size, setSize] = useState(30);
+    const [speed, setSpeed] = useState(50);
+    const [algorithm, setAlgorithm] = useState('Bubble Sort');
+
     const handleSizeChange = (e) => {
-        setSize(e.target.value);
+      setSize(e.target.value);
     };
 
     const handleSpeedChange = (e) => {
-        setSpeed(e.target.value);
+      setSpeed(e.target.value);
     };
 
     const handleAlgorithmChange = (e) => {
-        setAlgorithm(e.target.value);
+      setAlgorithm(e.target.value);
     };
 
     return (
