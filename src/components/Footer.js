@@ -35,7 +35,7 @@ const Footer = ({ isSorting, isPaused, generateNewArray, startSorting, pauseSort
                 </div>
                 <div className="flex items-center space-x-2">
                     <span>Algorithm:</span>
-                    <select value={algorithm} onChange={handleAlgorithmChange} className="bg-white rounded px-2 py-1" disabled={isSorting}>
+                    <select key="algorithm" value={algorithm} onChange={handleAlgorithmChange} className="bg-white rounded px-2 py-1" disabled={isSorting}>
                         <option>Bubble Sort</option>
                         <option>Selection Sort</option>
                         <option>Insertion Sort</option>
