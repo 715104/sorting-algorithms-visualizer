@@ -3,7 +3,6 @@ const bubbleSort = (array, speed, setArray, setSortedIndices, setTransitionIndic
     let n = arr.length;
     let i = 0;
     let j = 0;
-    let intervalRef = null;
 
     intervalRef = setInterval(() => {
         if (i < n) {
