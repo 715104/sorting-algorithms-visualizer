@@ -38,7 +38,7 @@ const App = () => {
   return () => {
     clearInterval(intervalRef.current);
   };
-}, [isSorting, isPaused]);
+}, [isSorting, isPaused, startSorting]);
 
   const startSorting = () => {
     if (isSorted(array)) {
