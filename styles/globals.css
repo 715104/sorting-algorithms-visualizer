@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-gray-100;
+    @apply h-screen;
+    @apply overflow-hidden;
+}
+
+.dark-mode {
+    @apply bg-gray-800;
+}
+
+.light-mode {
+    @apply bg-gray-100;
+}
+
+.bar {
+    @apply transition duration-300 ease-in-out;
+}
+
+.bar.bg-green-500 {
+    @apply bg-green-500;
+}
+
+.bar.bg-orange-500 {
+    @apply bg-orange-500;
+}
+
+.bar.bg-blue-500 {
+    @apply bg-blue-500;
+}
