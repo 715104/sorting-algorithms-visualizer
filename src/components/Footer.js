@@ -20,7 +20,7 @@ const Footer = ({ isSorting, isPaused, generateNewArray, startSorting, pauseSort
     return (
         <footer className="w-full p-4 flex items-center justify-center shadow-lg">
             <div className="flex items-center space-x-4">
-                <button onClick={generateNewArray} className={`bg-blue-600 text-white px-4 py-2 rounded ${isSorting ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isSorting}>
+                <button onClick={() => generateNewArray(size)} className={bg-blue-600 text-white px-4 py-2 rounded ${isSorting ? 'opacity-50 cursor-not-allowed' : ''}} disabled={isSorting}>
                     <i className="fas fa-random mr-2"></i>
                     New Array
                 </button>
