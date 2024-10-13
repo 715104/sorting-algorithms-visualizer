@@ -3,7 +3,6 @@ const insertionSort = (array, speed, setArray, setSortedIndices, setTransitionIn
     let n = arr.length;
     let i = 1;
     let j = 0;
-    let intervalRef = null;
 
     intervalRef = setInterval(() => {
         if (i < n) {
