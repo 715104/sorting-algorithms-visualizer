@@ -1,6 +1,7 @@
 const heapSort = async (array, speed, setArray, setSortedIndices, setTransitionIndices) => {
     let arr = [...array];
     let n = arr.length;
+    let intervalRef = null;
 
     const heapify = async (arr, n, i) => {
         let largest = i;
