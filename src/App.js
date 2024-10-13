@@ -35,7 +35,7 @@ const App = () => {
     return () => {
         clearInterval(intervalRef.current);
     };
-}, [speed]);
+}, []);
 
     const startSorting = () => {
         if (isSorted(array)) {
