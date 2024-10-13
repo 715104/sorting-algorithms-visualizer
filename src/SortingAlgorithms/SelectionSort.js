@@ -3,8 +3,9 @@ const selectionSort = (array, speed, setArray, setSortedIndices, setTransitionIn
     let n = arr.length;
     let i = 0;
     let minIdx = 0;
+    let intervalRef = null;
 
-    intervalRef.current = setInterval(() => {
+    intervalRef = setInterval(() => {
         if (i < n - 1) {
             minIdx = i;
             for (let j = i + 1; j < n; j++) {
@@ -23,7 +24,7 @@ const selectionSort = (array, speed, setArray, setSortedIndices, setTransitionIn
             i++;
         } else {
             setSortedIndices((prev) => [...prev, n - 1]);
-            clearInterval(intervalRef.current);
+            clearInterval(intervalRef);
         }
     }, 200 - speed * 2);
 };
