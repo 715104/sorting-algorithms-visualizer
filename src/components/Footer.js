@@ -12,7 +12,7 @@ const Footer = ({
   handleSizeChange,
   handleSpeedChange,
   handleAlgorithmChange,
-  handleToggleDarkMode, // Use this prop
+  handleToggleDarkMode,
 }) => {
   return (
     <footer className="w-full p-4 flex items-center justify-center shadow-lg">
