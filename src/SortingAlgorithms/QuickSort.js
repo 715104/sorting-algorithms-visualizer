@@ -1,6 +1,7 @@
 const quickSort = async (array, speed, setArray, setSortedIndices, setTransitionIndices) => {
     let arr = [...array];
     let n = arr.length;
+    let intervalRef = null;
 
     const quickSortHelper = async (arr, low, high) => {
         if (low < high) {
