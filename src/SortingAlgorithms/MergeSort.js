@@ -5,6 +5,7 @@ const mergeSort = (array, speed, setArray, setSortedIndices, setTransitionIndice
     let left = 0;
     let right = 0;
     let end = 0;
+    let intervalRef = null;
 
     const merge = (start, mid, end) => {
         let left = arr.slice(start, mid);
@@ -35,21 +36,21 @@ const mergeSort = (array, speed, setArray, setSortedIndices, setTransitionIndice
         }
     };
 
-    intervalRef.current = setInterval(() => {
+    intervalRef = setInterval(() => {
         if (step < n) {
             if (left < n - step) {
                 right = left + step;
                 end = Math.min(left + step * 2, n);
                 merge(left, right, end);
                 setArray([...arr]);
-                set TransitionIndices([left, right, end]);
+                setTransitionIndices([left, right, end]);
                 left += step * 2;
             } else {
                 step *= 2;
                 left = 0;
             }
         } else {
-            clearInterval(intervalRef.current);
+            clearInterval(intervalRef);
             setSortedIndices(Array.from({ length: n }, (_, i) => i));
         }
     }, 200 - speed * 2);
