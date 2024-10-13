@@ -28,11 +28,14 @@ const App = () => {
     }, [size]);
 
     useEffect(() => {
-        if (isSorting && !isPaused) {
-            clearInterval(intervalRef.current);
-            startSorting();
-        }
-    }, [speed]);
+    if (isSorting && !isPaused) {
+        clearInterval(intervalRef.current);
+        startSorting();
+    }
+    return () => {
+        clearInterval(intervalRef.current);
+    };
+}, [speed]);
 
     const startSorting = () => {
         if (isSorted(array)) {
